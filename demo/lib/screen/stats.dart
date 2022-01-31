@@ -36,18 +36,18 @@ class _StatsState extends State<Stats> {
               data: widget.chartdata,
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10*ratio),
             Container(
               child: Text(
                 "Pruebas rendidas",
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800
+                style: TextStyle(fontSize: 20*ratio, fontWeight: FontWeight.w800
                     ,color:Colors.cyan[600])
               ),
             ),
             Wrap(children: widget.blist),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
               child: Text("Volver",style: continueButtom),
               onPressed:  (){
@@ -55,7 +55,7 @@ class _StatsState extends State<Stats> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
           ] : 
@@ -68,7 +68,7 @@ class _StatsState extends State<Stats> {
                 style: noStatsTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
               child: Text("Volver",style: continueButtom),
               onPressed:  (){
@@ -76,7 +76,7 @@ class _StatsState extends State<Stats> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
           ]

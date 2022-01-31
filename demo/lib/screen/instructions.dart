@@ -24,18 +24,18 @@ class InstructionsScreen extends StatelessWidget {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Container(
               alignment: Alignment.topCenter,
-              width: 300,
-              height: 350,
+              width: 300*wratio,
+              height: 350*ratio,
               decoration: BoxDecoration(
                 color: Colors.white38,
               ),
               child: Text('Responda las preguntas que se le presentan a continuación. Haga click en el ícono de volúmen para escuchar la pregunta, y responda según corresponda. \n \nEn las preguntas donde deba responder con video, debe hacer click en el ícono verde para comenzar a grabar, y en el ícono rojo para detener'
               ,style:TextStyle(fontSize: 25)),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
               child: Text("Continuar",style:continueButtom),
               onPressed: () {
@@ -43,7 +43,7 @@ class InstructionsScreen extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
           ],

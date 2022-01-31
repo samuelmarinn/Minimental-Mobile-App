@@ -55,11 +55,11 @@ class _BodyState extends State<Body> {
                               "Crear Cuenta",
                               textAlign: TextAlign.left,
                               style: GoogleFonts.comfortaa(
-                                textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w900)
+                                textStyle: TextStyle(fontSize: 50*ratio, fontWeight: FontWeight.w900)
                               ),
                             ),
                           ),
-                          SizedBox(height: 40),
+                          SizedBox(height: 40*ratio),
                           TextFormField(
                             onChanged: (value) {
                               username = value.toString().trim();
@@ -75,7 +75,7 @@ class _BodyState extends State<Body> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 15/ratio),
                           TextFormField(
                             keyboardType: TextInputType.emailAddress,
                             onChanged: (value) {
@@ -92,7 +92,7 @@ class _BodyState extends State<Body> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 15*ratio),
                           TextFormField(
                             obscureText: hide,
                             validator: (value) {
@@ -121,7 +121,7 @@ class _BodyState extends State<Body> {
                               ),
                             ),        
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 15*ratio),
                           TextFormField(
                             obscureText: hide,
                             validator: (value) {
@@ -150,7 +150,7 @@ class _BodyState extends State<Body> {
                               ),
                             ),        
                           ),
-                          SizedBox(height: 25),
+                          SizedBox(height: 25*ratio),
                           Text( "Ya tengo una cuenta" ,
                           ),
                           GestureDetector(
@@ -170,7 +170,7 @@ class _BodyState extends State<Body> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10*ratio),
                           LoginSignupButton(
                             title: 'Registrarse',
                             ontapp: () async {

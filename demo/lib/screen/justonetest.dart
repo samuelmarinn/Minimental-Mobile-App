@@ -33,40 +33,40 @@ class _OneTestState extends State<OneTest> {
           children: <Widget>[
             Container(
               child: Text(
-                "RESULTADOS TEST DEL \n"+widget.resultsname,
+                "RESULTADOS TEST \n"+widget.resultsname,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: noStatsTitle,
+                style:postStatsTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20*ratio),
             Container(
               child: Text(
                 "USTED TIENE",
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 10*ratio),
             Container(
               child: Text(
                 widget.obtained.toString()+"/"+total.toString() +" PUNTOS",
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0,color:drawerMainColor),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0*ratio,color:drawerMainColor),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20*ratio),
              DataTable(  
               columns: [  
                 DataColumn(label: Text(  
                     'Cateogría',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                    style: TextStyle(fontSize: 18*ratio, fontWeight: FontWeight.bold)  
                 )),  
                 DataColumn(label: Text(  
                     'Puntaje',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                    style: TextStyle(fontSize: 18*ratio, fontWeight: FontWeight.bold)  
                 )),    
               ],  
               rows: [  
@@ -97,23 +97,23 @@ class _OneTestState extends State<OneTest> {
                 DataRow(cells: [   
                   DataCell(Text("Conclusión")),  
                   DataCell(Text(widget.conclusion
-                     ,style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900
+                     ,style: TextStyle(fontSize: 20*ratio, fontWeight: FontWeight.w900
                     ,color: widget.conclusion=="EN RIESGO DE DETERIORO COGNITIVO" ? Colors.red[600] : Colors.green[600])
                     )
                   ), 
                 ]),
               ],  
             ),  
-            SizedBox(height: 10),  
+            SizedBox(height: 10*ratio),  
             TextButton(
               child: Text("NOTA: En caso de estar en riesgo de deterioro cognitivo, consultar con especialistas, este test NO es una herramienta de diagnóstico"
-                ,style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900,color: Colors.red[900],fontStyle: FontStyle.italic)
+                ,style: TextStyle(fontSize: 20*ratio, fontWeight: FontWeight.w900,color: Colors.red[900],fontStyle: FontStyle.italic)
               ),
               onPressed:  (){
                 linkNextPage();
               },
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20*ratio),
             ElevatedButton(
               child: Text("Volver",style: continueButtom),
               onPressed:  (){
@@ -121,10 +121,10 @@ class _OneTestState extends State<OneTest> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize:  Size(140*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height:15),
+            SizedBox(height:15*ratio),
             TextButton(
               child: Text("Volver a inicio",style: continueButtom),
               onPressed:  (){
@@ -132,7 +132,7 @@ class _OneTestState extends State<OneTest> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(240*wratio, 50*ratio),
               ),
             ),
           ],

@@ -24,7 +24,7 @@ class _FirstRouteState extends State<FirstRoute> {
           children: <Widget>[ 
             Container(
               width: double.infinity,
-              height: 70,
+              height: 70*ratio,
               child: ElevatedButton.icon(
                 onPressed: () {  
                   var firebaseUser =  FirebaseAuth.instance.currentUser!.displayName;
@@ -38,23 +38,23 @@ class _FirstRouteState extends State<FirstRoute> {
                 icon: Icon(
                   Icons.arrow_forward ,
                   color: Colors.black,
-                  size: 40.0,
+                  size: 40.0*ratio,
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(20.0)),
                   primary: kPrimaryColor,
                   textStyle: TextStyle(
-                  fontSize: 30,
+                  fontSize: 30*ratio,
                   fontWeight: FontWeight.bold)
                 ),
                 label: Text("Realizar test"+"\n Minimental",style: continueButtom),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Container(
               width: double.infinity,
-              height: 70,
+              height: 70*ratio,
               child: ElevatedButton.icon(
                 onPressed: () async { 
                   var params= await getStats(context); 
@@ -66,14 +66,14 @@ class _FirstRouteState extends State<FirstRoute> {
                 icon: Icon(
                   Icons.bar_chart_outlined,
                   color: Colors.black,
-                  size: 40.0,
+                  size: 40.0*ratio,
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(20.0)),
                   primary: kPrimaryLightColor,
                   textStyle: TextStyle(
-                  fontSize: 30,
+                  fontSize: 30*ratio,
                   fontWeight: FontWeight.bold)
                 ),
                 label: Text("Ver resumen"+ "\n de resultados",style: continueButtom),

@@ -86,11 +86,11 @@ class _PatientRegState extends State<PatientReg> {
                             child: Text(
                               "Antes de seguir, ingrese datos del paciente (posteriormente podrán ser cambiados)",
                             style: GoogleFonts.comfortaa(
-                                textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)
+                                textStyle: TextStyle(fontSize: 30*ratio, fontWeight: FontWeight.w700)
                               ),
                             ),
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: 30*ratio),
                           TextFormField(
                             onChanged: (value) {
                               patientname = value.toString().trim();
@@ -105,7 +105,7 @@ class _PatientRegState extends State<PatientReg> {
                               filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10*ratio),
                           Row(
                             children: <Widget>[ 
                               new Flexible(
@@ -124,7 +124,7 @@ class _PatientRegState extends State<PatientReg> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              SizedBox(width: 10*wratio),
                               new Flexible(
                                 child: TextFormField(
                                   onChanged: (value) {
@@ -143,7 +143,7 @@ class _PatientRegState extends State<PatientReg> {
                               ),
                             ]
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10*ratio),
                           TextFormField(
                             onTap: () async {
                               FocusScope.of(context).requestFocus(new FocusNode());
@@ -168,7 +168,7 @@ class _PatientRegState extends State<PatientReg> {
                               filled: true,
                             ),
                           ),  
-                          SizedBox(height: 10),
+                          SizedBox(height: 10*ratio),
                           DropdownButtonFormField(
                             decoration: kTextFieldDecoration.copyWith(
                               hintText: 'Nivel Educacional',
@@ -198,7 +198,7 @@ class _PatientRegState extends State<PatientReg> {
                               );
                             }).toList(),
                           ),                       
-                          SizedBox(height: 10),            
+                          SizedBox(height: 10*ratio),            
                           TextFormField(
                             onChanged: (value) {
                               laboryears = value.toString().trim();
@@ -214,7 +214,7 @@ class _PatientRegState extends State<PatientReg> {
                               filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10*ratio),
                           DropdownButtonFormField(
                             //value: locval[0],
                             decoration: kTextFieldDecoration.copyWith(
@@ -245,7 +245,7 @@ class _PatientRegState extends State<PatientReg> {
                               );
                             }).toList(),
                           ),                          
-                          SizedBox(height: 10),                          
+                          SizedBox(height: 10*ratio),                          
                           TextFormField(
                             onChanged: (value) {
                               floor = value.toString().trim();
@@ -261,7 +261,7 @@ class _PatientRegState extends State<PatientReg> {
                               filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 10*ratio),
                           LoginSignupButton(
                             title: 'Guardar',
                             ontapp: () async {

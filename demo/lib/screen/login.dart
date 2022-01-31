@@ -56,7 +56,7 @@ class _BodyState extends State<Body> {
                       Text(
                         "Ingresar",
                         style: GoogleFonts.comfortaa(
-                          textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w900)
+                          textStyle: TextStyle(fontSize: 50*ratio, fontWeight: FontWeight.w900)
                         ),
                       ),
                       SizedBox(height: 60),
@@ -78,7 +78,7 @@ class _BodyState extends State<Body> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20*ratio),
                       TextFormField(
                         obscureText: hide,
                         validator: (value) {
@@ -107,7 +107,7 @@ class _BodyState extends State<Body> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 60),
+                      SizedBox(height: 60*ratio),
                       LoginSignupButton(
                         title: 'Ingresar',
                         ontapp: () async {
@@ -164,7 +164,7 @@ class _BodyState extends State<Body> {
                           }
                         },
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 10*ratio),
                       Text( "No tengo una cuenta" ,
                       ),
                       GestureDetector(
