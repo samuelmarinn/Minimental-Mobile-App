@@ -52,7 +52,7 @@ class _VerbalQState extends State<VerbalQ> {
       }
       if ((duration.elapsed.inSeconds>=0 && duration.elapsed.inSeconds<20) && (currenttask==instructions[0])){
         Orientation currentOrientation = MediaQuery.of(context).orientation;
-        if(currentOrientation == Orientation.landscape){
+        if(currentOrientation == Orientation.landscape && !notActive){
           setState(() {
             points++;
             frist=true;
@@ -60,17 +60,17 @@ class _VerbalQState extends State<VerbalQ> {
           });
         }
       }
-      else if ((duration.elapsed.inSeconds>=20 && duration.elapsed.inSeconds<30) || (currenttask==instructions[1])){
+      else if ((duration.elapsed.inSeconds>=20 && duration.elapsed.inSeconds<30) || (currenttask==instructions[1]) &&!notActive ){
         setState(() {
           activated=true;
         });
       }
-      else if (((duration.elapsed.inSeconds>=30 && duration.elapsed.inSeconds<40) || (currenttask==instructions[2])) && frist){
+      else if (((duration.elapsed.inSeconds>=30 && duration.elapsed.inSeconds<40) || (currenttask==instructions[2])) && frist ){
         setState(() {
           activated=false;
         });
         Orientation currentOrientation = MediaQuery.of(context).orientation;
-        if(currentOrientation == Orientation.portrait){
+        if(currentOrientation == Orientation.portrait && !notActive){
           setState(() {
             points++;
             if (!notActive){
@@ -108,6 +108,9 @@ class _VerbalQState extends State<VerbalQ> {
 
 
   void linkNext (){ 
+    setState(() {
+      notActive=true;
+    });
     sw.stop();
     int timeanswer =sw.elapsedMilliseconds;
     updatedf(widget.resultsname,"instrucción verbal",timeanswer);
@@ -132,9 +135,9 @@ class _VerbalQState extends State<VerbalQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             GestureDetector(
                 onTap: activated == true ? () {
                   setState(() {
@@ -145,13 +148,13 @@ class _VerbalQState extends State<VerbalQ> {
                 child: Center(
                   child: Container(
                     color: kPrimaryColor,
-                    width: 205,
-                    height: 205,
+                    width: 205*wratio,
+                    height: 205*ratio,
                     child: Text("") 
                   )
                 ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){  

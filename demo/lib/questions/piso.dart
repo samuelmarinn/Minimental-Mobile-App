@@ -60,7 +60,7 @@ class _FloorQState extends State<FloorQ> {
     updatedf(widget.resultsname,"piso",timeanswer);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => RepetitionQ("REPITA, LAS SIGUIENTES, PALABRAS: ","PREGUNTA N°11",widget.resultsname)),
+      MaterialPageRoute(builder: (context) => RepetitionQ("REPITA, Y MEMORICE, LAS SIGUIENTES, PALABRAS: ","PREGUNTA N°11",widget.resultsname)),
     );
   }
 
@@ -79,9 +79,9 @@ class _FloorQState extends State<FloorQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             TextField(
               decoration: InputDecoration(
                 hintText: "RESPONDA ACÁ",
@@ -107,7 +107,7 @@ class _FloorQState extends State<FloorQ> {
                 });
               },
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20*ratio),
             ElevatedButton(
             child: Text("Continuar",style: continueButtom),
               onPressed: ((){
@@ -117,10 +117,10 @@ class _FloorQState extends State<FloorQ> {
               }),
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

@@ -65,9 +65,9 @@ class _SentenceQState extends State<SentenceQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
               child: Text("Tomar Foto",style: continueButtom),
               onPressed: () async { 
@@ -80,10 +80,10 @@ class _SentenceQState extends State<SentenceQ> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(160, 50),
+                fixedSize: Size(160*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom,),
               onPressed: (){    

@@ -60,7 +60,7 @@ class _DrawQState extends State<DrawQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
              Row(crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -92,10 +92,10 @@ class _DrawQState extends State<DrawQ> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(180, 50),
+                fixedSize: Size(180*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

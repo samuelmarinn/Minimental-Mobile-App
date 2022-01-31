@@ -41,8 +41,9 @@ class _MemoryQState extends State<MemoryQ> {
   Future<void> evaluateAnswer() async {
     int points =0;
     var words = answer.split(" ");
-    for(var i=0;i<words.length;i++){
-      if (widget.wordss.contains(words[i])){
+    var words2 = words.toSet().toList();
+    for(var i=0;i<words2.length;i++){
+      if (widget.wordss.contains(words2[i])){
         points= points +1;
       }
     }
@@ -75,11 +76,11 @@ class _MemoryQState extends State<MemoryQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             VideoRecorderExample(answer, callback,"memoria"),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
             child: Text("Continuar",style: continueButtom),
               onPressed: ((){
@@ -89,10 +90,10 @@ class _MemoryQState extends State<MemoryQ> {
               }),
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

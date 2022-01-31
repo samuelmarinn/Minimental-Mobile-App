@@ -91,7 +91,7 @@ class _ImageQState extends State<ImageQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
             Row(crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -100,15 +100,15 @@ class _ImageQState extends State<ImageQ> {
                 (
                   Container(
                     alignment: Alignment.center,
-                    width: 200,
-                    height: 300,
+                    width: 200*wratio,
+                    height: 300*ratio,
                     decoration:BoxDecoration(
                       image:DecorationImage(
                         image: NetworkImage(urlpen.toString())
                       )
                     ),
                   )),
-                  SizedBox(width: 10),
+                  SizedBox(width: 10*ratio),
                   urlclock==null ? CircularProgressIndicator() : Container(
                     child:Image.network(urlclock.toString(),height: 170.0, width:140,
                     fit: BoxFit.cover,),
@@ -116,7 +116,7 @@ class _ImageQState extends State<ImageQ> {
               ],
             ),
             VideoRecorderExample(answer, callback,"denominación de objetos"),
-            SizedBox(height: 20,),
+            SizedBox(height: 20*ratio,),
             ElevatedButton(
             child: Text("Continuar",style: continueButtom),
               onPressed: ((){
@@ -126,10 +126,10 @@ class _ImageQState extends State<ImageQ> {
               }),
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

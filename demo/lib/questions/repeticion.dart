@@ -19,7 +19,7 @@ class _RepetitionQState extends State<RepetitionQ> {
   List <int> wordsindex= diffrandoms(3,repwords.length);
   List <String> question = [];
   bool gonext= false;
-  int tries=1;
+  int tries=0;
   int firsttotal=0;
   Stopwatch sw = new Stopwatch();
 
@@ -68,10 +68,12 @@ class _RepetitionQState extends State<RepetitionQ> {
   }
 
   Future<void> evaluateAnswer() async {
+    tries = tries + 1;
     int points =0;
     var words = answer.split(" ");
-    for(var i=0;i<words.length;i++){
-      if (question.contains(words[i])){
+    var words2 = words.toSet().toList();
+    for(var i=0;i<words2.length;i++){
+      if (question.contains(words2[i])){
         points= points +1;
       }
     }
@@ -88,9 +90,8 @@ class _RepetitionQState extends State<RepetitionQ> {
       firsttotal=points;
     }
     //enviar puntos y respuesta a un servidor
-    tries = tries + 1;
-
     uploadPoints("repetición $tries",widget.resultsname,points);
+
     setState(() {
       answer = "";
     });
@@ -122,11 +123,11 @@ class _RepetitionQState extends State<RepetitionQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta+"..." +question[0] + ", "+ question[1] + ", " + question[2],kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             VideoRecorderExample(answer, callback,"repetición $tries"),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
             child: Text("Ingresar Respuesta",style: continueButtom),
               onPressed: ((){
@@ -134,10 +135,10 @@ class _RepetitionQState extends State<RepetitionQ> {
               }),
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(250, 50),
+                fixedSize:  Size(250*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

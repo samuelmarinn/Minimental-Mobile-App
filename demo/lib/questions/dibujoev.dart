@@ -49,11 +49,11 @@ class _DrawEvState extends State<DrawEv> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: 300,
-              height: 400,
+              width: 300*wratio,
+              height: 400*ratio,
               child: Image.file(File(widget.image.path), fit: BoxFit.cover),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
               child: Text("Ingrsar Respuesta",style: continueButtom),
               onPressed: (){  
@@ -63,10 +63,10 @@ class _DrawEvState extends State<DrawEv> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(250*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Volver",style: skipButtom,),
               onPressed: (){     

@@ -131,11 +131,11 @@ class _PlaceQState extends State<PlaceQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             VideoRecorderExample(answer, callback,widget.nivel),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
               child: Text("Continuar",style: continueButtom),
               onPressed:  (){
@@ -145,10 +145,10 @@ class _PlaceQState extends State<PlaceQ> {
               },
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

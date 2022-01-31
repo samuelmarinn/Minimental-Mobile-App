@@ -88,9 +88,9 @@ class _LocQState extends State<LocQ> {
                 style: continueButtom,
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
-            SizedBox(height: 10),
+            SizedBox(height: 10*ratio),
             ...questionops.map((question){
               return Container(
                 width: double.infinity,
@@ -103,14 +103,14 @@ class _LocQState extends State<LocQ> {
                   style: ElevatedButton.styleFrom(
                     primary: answer==question ? Colors.green : Colors.cyan,
                     textStyle: TextStyle(
-                    fontSize: 30,
+                    fontSize: 30*ratio,
                     fontWeight: FontWeight.bold)
                   ),
                   child: Text(question),
                   ),
               );
             }).toList(),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             ElevatedButton(
             child: Text("Continuar",style: continueButtom),
               onPressed: ((){
@@ -120,10 +120,10 @@ class _LocQState extends State<LocQ> {
               }),
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

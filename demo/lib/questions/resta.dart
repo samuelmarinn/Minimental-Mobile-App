@@ -45,16 +45,6 @@ class _SubQState extends State<SubQ> {
     });
   }
 
-  incorrectDialog(BuildContext context) {
-
-    Widget okButton = TextButton(
-      child: Text("OK"),
-      onPressed: () { 
-        Navigator.of(context).pop();
-      },
-    );
-  }
-
   Future<void> evaluateAnswer() async {
     String aStr = answer.replaceAll(new RegExp(r'[^0-9]'),'');
     if ((sta-betw).toString()==aStr){
@@ -85,7 +75,7 @@ class _SubQState extends State<SubQ> {
   void linkNext (){
     Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => SpeQ("DELE TREE, LA PALABRA, MUNDO, AL RE VEZ",tp1,widget.wordsmemory,"PREGUNTA N°13",widget.resultsname)),
+    MaterialPageRoute(builder: (context) => SpeQ("DELE TRE E, LA PALABRA, MUNDO, AL RE VEZ",tp1,widget.wordsmemory,"PREGUNTA N°13",widget.resultsname)),
     ); 
   }
 
@@ -104,24 +94,23 @@ class _SubQState extends State<SubQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta+"\n" + "$sta"+ " menos "+ "$betw",kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             VideoRecorderExample(answer, callback,"resta $cont"),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
             child: Text("Ingresar Respuesta",style: continueButtom),
               onPressed: ((){
                 sw.stop();
                 evaluateAnswer();
-                linkNext(); 
               }),
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(250, 50),
+                fixedSize: Size(250*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     

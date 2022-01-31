@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:demo/additional/constants.dart';
 import 'package:demo/additional/otherfunctions.dart';
 import 'package:demo/components/tts.dart';
@@ -42,7 +44,7 @@ class _SpeQState extends State<SpeQ> {
   Future<void> evaluateAnswer() async {
     int points =0;
     var validation= answer.split(" ");
-    for ( var i = 0 ; i <= validation.length; i++){
+    for ( var i = 0 ; i < min(validation.length,phrase.length); i++){
       if (validation[i].length==1 && validation[i]==phrase[i]){
         setState((){
           points++;
@@ -77,11 +79,11 @@ class _SpeQState extends State<SpeQ> {
                 style: questionTitle,
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             Teteese(widget.pregunta,kPrimaryColor),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             VideoRecorderExample(answer, callback,"deletreo inverso"),
-            SizedBox(height: 30),
+            SizedBox(height: 30*ratio),
             ElevatedButton(
             child: Text("Continuar",style: continueButtom),
               onPressed: ((){
@@ -91,10 +93,10 @@ class _SpeQState extends State<SpeQ> {
               }),
               style: ElevatedButton.styleFrom(
                 primary:kPrimaryColor,
-                fixedSize: const Size(140, 50),
+                fixedSize: Size(140*wratio, 50*ratio),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15*ratio),
             TextButton(
               child: Text("Saltar",style: skipButtom),
               onPressed: (){     
