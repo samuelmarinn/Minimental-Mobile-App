@@ -1,27 +1,41 @@
   
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:ui';
+
+var pixelRatio = window.devicePixelRatio;
+
+//Size in logical pixels
+var logicalScreenSize = window.physicalSize / pixelRatio;
+var logicalWidth = logicalScreenSize.width;
+var logicalHeight = logicalScreenSize.height;
+
+double ratio = logicalHeight/803.6363636363636;
+double wratio = logicalWidth/392.72727272727275;
 
 TextStyle questionTitle=GoogleFonts.comfortaa(
-  textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.w900,color: Colors.black)
+  textStyle: TextStyle(fontSize: 50*ratio, fontWeight: FontWeight.w900,color: Colors.black)
 );
 TextStyle noStatsTitle=GoogleFonts.comfortaa(
-  textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w800,color: Colors.black)
+  textStyle: TextStyle(fontSize: 40*ratio, fontWeight: FontWeight.w800,color: Colors.black)
+);
+TextStyle postStatsTitle=GoogleFonts.comfortaa(
+  textStyle: TextStyle(fontSize: 35*ratio, fontWeight: FontWeight.w800,color: Colors.black)
 );
 TextStyle skipButtom=GoogleFonts.comfortaa(
-  textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,color: Colors.redAccent)
+  textStyle: TextStyle(fontSize: 20*ratio, fontWeight: FontWeight.w700,color: Colors.redAccent)
 );
 TextStyle continueButtom=GoogleFonts.comfortaa(
-  textStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.w900,color:Colors.black)
+  textStyle: TextStyle(fontSize: 25*ratio, fontWeight: FontWeight.w900,color:Colors.black)
 );
 TextStyle homeButton=GoogleFonts.comfortaa(
-  textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.w900,color:Colors.black)
+  textStyle: TextStyle(fontSize: 30*ratio, fontWeight: FontWeight.w900,color:Colors.black)
 );
 TextStyle conditionButton=GoogleFonts.comfortaa(
-  textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,color:drawerMainColor)
+  textStyle: TextStyle(fontSize: 20*ratio, fontWeight: FontWeight.w600,color:drawerMainColor)
 );
 TextStyle condtitleButton=GoogleFonts.comfortaa(
-  textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w700,color:Colors.black)
+  textStyle: TextStyle(fontSize: 20*ratio, fontWeight: FontWeight.w700,color:Colors.black)
 );
 
 const backgroundColor = Color(0xFFD6F8F3);

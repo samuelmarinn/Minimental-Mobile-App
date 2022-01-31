@@ -182,8 +182,8 @@ Future<List> getStats(var context) async {
           );    
         }
         ,style: ElevatedButton.styleFrom(
-          primary:kPrimaryColor,
-          fixedSize: const Size(140, 50),
+          primary:drawerMainColor,
+          fixedSize: Size(140*wratio, 50*ratio),
         ),
         child: Text(name)
       ));
