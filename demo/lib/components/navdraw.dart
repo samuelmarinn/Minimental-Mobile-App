@@ -91,18 +91,18 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
           padding: widget.padding.add(EdgeInsets.symmetric(vertical: 40)),
           child: Row(
             children: [
-              SizedBox(width: 20),
+              SizedBox(width: 20*wratio),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     name,
-                    style: TextStyle(fontSize: 20, color: textdraw),
+                    style: TextStyle(fontSize: 20*ratio, color: textdraw),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     email,
-                    style: TextStyle(fontSize: 14, color: textdraw),
+                    style: TextStyle(fontSize: 14*ratio, color: textdraw),
                   ),
                 ],
               ),

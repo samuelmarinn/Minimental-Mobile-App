@@ -13,7 +13,7 @@ class LoginSignupButton extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: SizedBox(
-        height: 45,
+        height: 45*ratio,
         child: ElevatedButton(
           onPressed: 
             ontapp,
@@ -22,7 +22,7 @@ class LoginSignupButton extends StatelessWidget {
             child: Text(
               title,
               style:GoogleFonts.dmSans(
-                textStyle: TextStyle(fontSize: 20,
+                textStyle: TextStyle(fontSize: 20*ratio,
                 color: Colors.black
                 , fontWeight: FontWeight.w700
               )),

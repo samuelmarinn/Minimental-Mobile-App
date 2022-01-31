@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:camera/camera.dart';
+import 'package:demo/additional/constants.dart';
 import 'package:demo/questions/dibujoev.dart';
 import 'package:demo/questions/oracionev.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class TakePicScrState extends State<TakePicScr> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 105.4,
+              height: 105.4*ratio,
               width: double.infinity,
               color: Colors.black,
               child: GestureDetector(
@@ -88,8 +89,8 @@ class TakePicScrState extends State<TakePicScr> {
                     child:
                       Container(
                         //color: Colors.black,
-                        height: 60,
-                        width: 60,
+                        height: 60*ratio,
+                        width: 60*wratio,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.white,

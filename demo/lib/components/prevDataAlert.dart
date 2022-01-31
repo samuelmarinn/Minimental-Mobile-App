@@ -57,7 +57,7 @@ prevData(BuildContext context,String loc,String floor) {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              SizedBox(height: 40),
+              SizedBox(height: 40*ratio),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: TextFormField(

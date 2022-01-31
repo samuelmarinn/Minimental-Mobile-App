@@ -1,5 +1,7 @@
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:charts_flutter/flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Series {
   final DateTime date;
@@ -40,7 +42,18 @@ class Chart extends StatelessWidget {
               ),
               Expanded(
                 child: charts.TimeSeriesChart(series, animate: true,
-                    domainAxis: const charts.DateTimeAxisSpec(
+                  primaryMeasureAxis: NumericAxisSpec(
+                    tickFormatterSpec: BasicNumericTickFormatterSpec.fromNumberFormat(
+                      NumberFormat.compact() // ← your format goes here
+                    ) // ← pass your formatter here
+                  ),
+                  domainAxis: const charts.DateTimeAxisSpec(
+                    tickFormatterSpec: charts.AutoDateTimeTickFormatterSpec(
+                      day: charts.TimeFormatterSpec(
+                        format: 'dd MMM',
+                        transitionFormat: 'dd MMM yyyy',
+                      ),
+                    ),
                   ),
                 ),
               )

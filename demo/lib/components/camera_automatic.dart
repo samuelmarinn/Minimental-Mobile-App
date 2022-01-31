@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:camera/camera.dart';
+import 'package:demo/additional/constants.dart';
 import 'package:demo/questions/ojosev.dart';
 import 'package:flutter/material.dart';
 import 'package:quiver/async.dart';
@@ -87,11 +88,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             future: _initializeControllerFuture,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                //final size = MediaQuery.of(context).size;
-                //final deviceRatio = size.width / size.height;
-                //final xScale = 1.0;
-                // Modify the yScale if you are in Landscape
-                //final yScale = 1.0;
                 if (timerstarted==false) {
                   startTimer();
                 }
@@ -109,10 +105,10 @@ class TakePictureScreenState extends State<TakePictureScreen> {
               height: 105,
               child: _current>1 ? Text("Cierre Los ojos en" + "\n" + "$showing" + "\n" + "segundos"
               ,style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold
-              ,height: 1, fontSize: 43),textAlign: TextAlign.center,) 
+              ,height: 1, fontSize: 43*ratio),textAlign: TextAlign.center,) 
               : Text("Cierre los ojos ahora"
               ,style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold
-              ,height: 1, fontSize: 43),textAlign: TextAlign.center,) 
+              ,height: 1, fontSize: 43*ratio),textAlign: TextAlign.center,) 
             )
           ),
         ],
